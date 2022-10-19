@@ -1,0 +1,24 @@
+<mat-card class="card-item ">
+  <mat-card-header (click)="openUpdateCardModal(card)">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{card.name  || '-'}}</mat-card-title>
+    <mat-card-subtitle>{{card.title}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{card.phone}} </li>
+      <li class="list-group-item" *ngIf="card.email">
+        <span **ngIf="card.email">{{card.email}}</span>
+        <small class="text-warning no-content" **ngIf="!card.email">E-posta Adresi Girilmemiş</small>
+      </li>
+
+      <li class="list-group-item" *ngIf="card.adress">
+        <span *ngIf="card.email">{{card.adress}}</span>
+        <small class="text-warning no-content" **ngIf="!card.adress"> Adres Girilmemiş</small></li>
+
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+
